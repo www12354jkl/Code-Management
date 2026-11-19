@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "18ca5fd3-0e7f-4b88-9dcc-41698e2bc591",
+  "status": "current",
+  "command": "deliver",
+  "type": "erd",
+  "input": "D:\\workspace\\项目工程管理\\.archify\\erd-onegate-20261119-192400\\candidate.json",
+  "output": "D:\\workspace\\项目工程管理\\projects\\OneGate-Manual\\architecture\\html\\onegate-erd.html",
+  "specification": {
+    "sha256": "4cac0e5ef14f3b2ae4aaf269a7f70a20320967800d86ae7791b8d6cdbf6b313f",
+    "bytes": 4565
+  },
+  "artifact": {
+    "sha256": "eee493c7ee2a8daeb4e134c93a026cb57f9fc97e2ecfb1e64926c1a5c6423267",
+    "bytes": 853317
+  }
+}

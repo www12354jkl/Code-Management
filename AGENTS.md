@@ -24,7 +24,7 @@
 - 开发日志按 `YYYY-MM-DD.md` 命名，只记当天实际做的事；没有踩坑就不写踩坑段；不要写"明天计划"；不要凑内容
 
 ## 图表约定
-- 架构图、流程图：用 HTML 流程图 skill 生成，源文件放对应的 `architecture/` 或 `flows/`，并在笔记里链接或嵌入
+- 架构图、流程图：用 HTML 流程图 skill 生成，架构类 HTML 源文件放在 `architecture/html/`，流程图放在 `flows/`（若流程文档增多也可放 `flows/html/`），并在笔记里链接或嵌入
 - 简单的小图：直接用 Mermaid 写在笔记里
 - 思维导图：使用 gogoga Mind Map 插件，格式就是普通 Markdown：
   - frontmatter 必须有 `mindmap: true`

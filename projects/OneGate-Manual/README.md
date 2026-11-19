@@ -50,4 +50,7 @@ repo: D:\workspace\OneGate-Manual
 
 - [[思维导图]]
 - 架构：[[architecture/架构说明]]
+- 中间件：[[architecture/Redis与RabbitMQ设计]]
+- 数据库：[[architecture/数据库设计]]（[[architecture/html/onegate-erd.html|E-R 图]]）
+- 流程图：[[flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费及死信回滚流程]]
 - 部署：[[deploy/部署说明]]
