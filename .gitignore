@@ -1,0 +1,12 @@
+# Obsidian 本地状态、缓存与插件目录（含插件本地凭据与工作区状态）
+.obsidian/
+
+# 本地工具与工作目录
+.claudian/
+.archify/
+.agents/
+
+# 系统临时文件
+.DS_Store
+Thumbs.db
+desktop.ini
