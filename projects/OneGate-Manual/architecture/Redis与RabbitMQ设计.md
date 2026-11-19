@@ -5,7 +5,7 @@ updated: 2026-11-19
 
 # Redis 与 RabbitMQ 设计
 
-关联文档：[[../README|项目 README]] ｜ [[架构说明]] ｜ [[数据库设计]] ｜ [[../flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费流程图]]
+关联文档：[[../README|项目 README]] ｜ [[架构说明]] ｜ [[数据库设计]] ｜ [[../flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费流程图]] ｜ [[../flows/onegate-billing-sequence.drawio|计费与死信回滚时序图 (.drawio)]]
 
 ## 一、Redis 设计
 
@@ -65,10 +65,10 @@ stateDiagram-v2
 
 | 队列名称 | 绑定交换机 | Routing Key | 特殊参数 / 转发目标 | 用途说明 |
 |---|---|---|---|---|
-| `onegate.billing.settle.queue` | `onegate.billing.exchange` | `onegate.billing.settle` | 无 | 正常异步结算队列，承载 `SettleMessage`（消费者 `SettleConsumer` 待实现） |
+| `onegate.billing.settle.queue` | `onegate.billing.exchange` | `onegate.billing.settle` | 无 | 正常异步结算队列，由 `QuotaSettleConsumer` 消费 `SettleMessage` 并完成事务落库 |
 | `onegate.billing.timeout.delay.queue` | `onegate.billing.exchange` | `onegate.billing.timeout.delay` | **无消费者**；`x-message-ttl: 300000`（5 分钟）；DLX → `onegate.billing.dlx.exchange` / `onegate.billing.timeout.rollback` | 预冻结兜底延迟队列；超时未结算消息自动转入死信回滚队列 |
-| `onegate.billing.timeout.rollback.queue` | `onegate.billing.dlx.exchange`<br>`onegate.billing.exchange` | `onegate.billing.timeout.rollback` | 双绑定：同时接收死信转发与业务异常直连立即回滚 | 超时/异常回滚处理队列（消费者 `TimeoutRollbackConsumer` 待实现） |
-| `onegate.billing.test.delay.queue` | `onegate.billing.exchange` | `onegate.billing.test.delay` | `x-message-ttl: 2000`（2 秒）；DLX → `onegate.billing.dlx.exchange` / `onegate.billing.timeout.rollback` | 演练/测试专用短延迟队列，避免阻塞在 5 分钟生产队列头部 |
+| `onegate.billing.timeout.rollback.queue` | `onegate.billing.dlx.exchange`<br>`onegate.billing.exchange` | `onegate.billing.timeout.rollback` | 双绑定：同时接收死信转发与业务异常直连立即回滚 | 超时/异常回滚处理队列，由 `QuotaTimeoutRollbackConsumer` 消费 |
+| `onegate.billing.test.delay.queue` | `onegate.billing.exchange` | `onegate.billing.test.delay` | `x-message-ttl: 2000`（2 秒）；DLX → `onegate.billing.dlx.exchange` / `onegate.billing.timeout.rollback` | 演练/测试专用短延迟队列（配合 `/admin/test/freeze-only`），避免阻塞在 5 分钟生产队列头部 |
 
 ### 2.3 消息体契约
 
@@ -79,5 +79,5 @@ stateDiagram-v2
 
 ### 2.4 当前实现进度与缺口
 
-- 已完成：交换机、队列、TTL 与 DLX 绑定拓扑已在 `RabbitMqConfig` 声明；`QuotaBillingRpcServiceImpl` 预冻结成功后已发送 `TimeoutCheckMessage`。
-- 待补全：`SettleConsumer`（接收 `SettleMessage` 调用结算并落库）与 `TimeoutRollbackConsumer`（接收死信/立即回滚消息调用回滚并更新流水状态）尚未创建。
+- 已完成：`RabbitMqConfig` 拓扑声明、`QuotaBillingRpcServiceImpl` 预冻结后延迟消息投递、`QuotaSettleConsumer` 异步结算与补偿落库、`QuotaTimeoutRollbackConsumer` 死信超时回滚落库，以及 `AdminController`（`/admin/test/freeze-only`）秒级死信演练入口。
+- 待补全：网关模块 `onegate-gateway` 向结算队列投递 `SettleMessage` 的上游调用链（以及 `onegate-billing-service` 启动类）。

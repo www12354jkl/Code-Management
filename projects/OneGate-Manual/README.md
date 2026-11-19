@@ -41,7 +41,7 @@ repo: D:\workspace\OneGate-Manual
 ## 快速运行
 
 > [!NOTE] 当前仓库状态
-> 目前仅完成了基础设施编排、`onegate-common` 与 `onegate-billing-service` 的核心 RPC/Lua/MQ 拓扑配置。`onegate-billing-service` 尚缺 Spring Boot 启动类与 MQ 消费者，`onegate-gateway` 模块尚未创建，暂未形成完整端到端运行链路。
+> 目前已完成基础设施编排、`onegate-common` 契约层，以及 `onegate-billing-service` 的核心 RPC、Lua 脚本、RabbitMQ 双消费者（`QuotaSettleConsumer` / `QuotaTimeoutRollbackConsumer`）与 `/admin` 对账控制台；`onegate-billing-service` 尚缺 Spring Boot 启动类，`onegate-gateway` 模块尚未创建，暂未形成完整端到端网关链路。
 
 1. 在源码目录 `D:\workspace\OneGate-Manual` 启动中间件（MySQL、Redis、RabbitMQ、Nacos），详见 [[deploy/部署说明]]。
 2. 在 `D:\workspace\OneGate-Manual\backend` 编译现有模块（`onegate-common`、`onegate-billing-service`）。
@@ -52,5 +52,5 @@ repo: D:\workspace\OneGate-Manual
 - 架构：[[architecture/架构说明]]
 - 中间件：[[architecture/Redis与RabbitMQ设计]]
 - 数据库：[[architecture/数据库设计]]（[[architecture/html/onegate-erd.html|E-R 图]]）
-- 流程图：[[flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费及死信回滚流程]]
+- 流程图：[[flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费及死信回滚流程]] ｜ [[flows/onegate-billing-sequence.drawio|配额计费与死信回滚时序图 (.drawio)]]
 - 部署：[[deploy/部署说明]]

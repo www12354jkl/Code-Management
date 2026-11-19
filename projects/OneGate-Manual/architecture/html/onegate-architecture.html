@@ -5274,8 +5274,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <path data-edge-from="billing" data-edge-to="redis" data-edge-label="Lua 原子脚本" data-edge-key="4" data-edge-id="billing-to-redis" data-composition-points="875,294;1005,294" data-composition-crossover="halo" data-composition-independent="true" d="M 875 294 L 1005 294" class="a-emphasis" data-animate="edge" style="--step:4" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:5">
-          <path data-graph-role="automatic-crossover-underlay" d="M 494 328 L 494 528 Q 494 536 502 536 L 570 536" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="gateway" data-edge-to="rabbitmq" data-edge-label="异步结算消息 (待建)" data-edge-key="5" data-edge-id="gateway-to-rabbitmq" data-composition-points="494,328;494,536;570,536" data-composition-crossover="halo" data-composition-independent="true" d="M 494 328 L 494 528 Q 494 536 502 536 L 570 536" class="a-dashed" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 510 312 L 578 312 Q 586 312 586 320 L 586 520" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="gateway" data-edge-to="rabbitmq" data-edge-label="异步结算消息 (待建)" data-edge-key="5" data-edge-id="gateway-to-rabbitmq" data-composition-points="510,312;586,312;586,520" data-composition-crossover="halo" data-composition-independent="true" d="M 510 312 L 578 312 Q 586 312 586 320 L 586 520" class="a-dashed" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:6">
           <path data-graph-role="automatic-crossover-underlay" d="M 758.5 328 L 758.5 520" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5283,7 +5283,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
           <path data-graph-role="automatic-crossover-underlay" d="M 686.5 520 L 686.5 328" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="rabbitmq" data-edge-to="billing" data-edge-label="消费结算 / 回滚 (待建)" data-edge-key="7" data-edge-id="rabbitmq-to-billing" data-composition-points="686.5,520;686.5,328" data-composition-crossover="halo" data-composition-independent="true" d="M 686.5 520 L 686.5 328" class="a-dashed" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-edge-from="rabbitmq" data-edge-to="billing" data-edge-label="消费结算 / 回滚" data-edge-key="7" data-edge-id="rabbitmq-to-billing" data-composition-points="686.5,520;686.5,328" data-composition-crossover="halo" data-composition-independent="true" d="M 686.5 520 L 686.5 328" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
           <path data-graph-role="automatic-crossover-underlay" d="M 875 312 L 928 312 Q 936 312 936 320 L 936 520" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5326,8 +5326,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="422.5" y="320" class="t-backend" font-size="7" text-anchor="middle">待创建</text>
         </g>
 
-        <g id="node-billing" data-node-id="billing" data-node-label="onegate-billing-service" tabindex="0" role="button" aria-label="聚焦onegate-billing-service，计费服务 :8081 / :20880, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="计费服务 :8081 / :20880" data-node-tag="部分完成" data-node-context="架构组件">
-          <title>onegate-billing-service · 计费服务 :8081 / :20880 · 架构组件 · 部分完成</title>
+        <g id="node-billing" data-node-id="billing" data-node-label="onegate-billing-service" tabindex="0" role="button" aria-label="聚焦onegate-billing-service，计费服务 :8081 / :20880, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="计费服务 :8081 / :20880" data-node-tag="缺启动类" data-node-context="架构组件">
+          <title>onegate-billing-service · 计费服务 :8081 / :20880 · 架构组件 · 缺启动类</title>
           <rect x="670" y="260" width="205" height="68" rx="8" class="c-mask"/>
           <rect x="670" y="260" width="205" height="68" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(676 266) scale(0.6875)">
@@ -5335,7 +5335,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           </g>
           <text data-node-label="" data-detail-anchor="" x="772.5" y="292" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">onegate-billing-service</text>
         <text data-detail="context" x="772.5" y="308" class="t-muted" font-size="9" text-anchor="middle">计费服务 :8081 / :20880</text>
-        <text data-detail="fine" x="772.5" y="320" class="t-backend" font-size="7" text-anchor="middle">部分完成</text>
+        <text data-detail="fine" x="772.5" y="320" class="t-backend" font-size="7" text-anchor="middle">缺启动类</text>
         </g>
 
         <g id="node-redis" data-node-id="redis" data-node-label="Redis 7.2" tabindex="0" role="button" aria-label="聚焦Redis 7.2，Lua 配额与限流 :6382, 架构组件" aria-pressed="false" data-node-kind="database" data-node-sublabel="Lua 配额与限流 :6382" data-node-context="架构组件">
@@ -5398,16 +5398,16 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text x="940" y="284" class="t-edge-emphasis" font-size="8" text-anchor="middle">Lua 原子脚本</text>
         </g>
         <g data-detail="context" data-edge-from="gateway" data-edge-to="rabbitmq" data-edge-label="异步结算消息 (待建)" data-edge-key="5" data-edge-id="gateway-to-rabbitmq">
-          <rect x="386.79999999999995" y="425" width="101.2" height="14" rx="3" class="c-mask"/>
-          <text x="437.4" y="435" class="t-edge-dashed" font-size="8" text-anchor="middle">异步结算消息 (待建)</text>
+          <rect x="535.4" y="396" width="101.2" height="14" rx="3" class="c-mask"/>
+          <text x="586" y="406" class="t-edge-dashed" font-size="8" text-anchor="middle">异步结算消息 (待建)</text>
         </g>
         <g data-detail="context" data-edge-from="billing" data-edge-to="rabbitmq" data-edge-label="投递 5min 延迟检查" data-edge-key="6" data-edge-id="billing-to-rabbitmq">
           <rect x="764.5" y="417" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
           <text x="812.7" y="427" class="t-edge-default" font-size="8" text-anchor="middle">投递 5min 延迟检查</text>
         </g>
-        <g data-detail="context" data-edge-from="rabbitmq" data-edge-to="billing" data-edge-label="消费结算 / 回滚 (待建)" data-edge-key="7" data-edge-id="rabbitmq-to-billing">
-          <rect x="628.7" y="500" width="115.6" height="14" rx="3" class="c-mask"/>
-          <text x="686.5" y="510" class="t-edge-dashed" font-size="8" text-anchor="middle">消费结算 / 回滚 (待建)</text>
+        <g data-detail="context" data-edge-from="rabbitmq" data-edge-to="billing" data-edge-label="消费结算 / 回滚" data-edge-key="7" data-edge-id="rabbitmq-to-billing">
+          <rect x="645.5" y="500" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="686.5" y="510" class="t-edge-default" font-size="8" text-anchor="middle">消费结算 / 回滚</text>
         </g>
         <g data-detail="context" data-edge-from="billing" data-edge-to="mysql" data-edge-label="读写账户与渠道" data-edge-key="8" data-edge-id="billing-to-mysql">
           <rect x="897.4" y="396" width="77.2" height="14" rx="3" class="c-mask"/>
@@ -5624,9 +5624,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>已完成能力</h3>
         </div>
         <ul>
-          <li>onegate-common 定义 6 个 Dubbo 计费 RPC 接口与 DTO 契约</li>
-          <li>pre_freeze / settle / rollback 三套 Redis Lua 脚本实现原子扣减与防重</li>
-          <li>RabbitMQ 声明结算、5 分钟 TTL 延迟、DLX 死信回滚与 2 秒测试队列</li>
+          <li>onegate-common 契约与 pre_freeze / settle / rollback 三套 Lua 脚本</li>
+          <li>QuotaSettleConsumer / QuotaTimeoutRollbackConsumer 消费落库与补偿</li>
+          <li>AdminController (/admin) 提供黄金对账、重置与秒级 DLX 演练接口</li>
         </ul>
       </div>
 
@@ -5637,7 +5637,6 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </div>
         <ul>
           <li>onegate-billing-service 尚缺 Spring Boot 启动类，暂无法独立拉起</li>
-          <li>SettleConsumer 与 TimeoutRollbackConsumer 及 MySQL 流水落库未实现</li>
           <li>onegate-gateway 网关模块尚未创建（鉴权、短路保护、路由与结算投递）</li>
         </ul>
       </div>

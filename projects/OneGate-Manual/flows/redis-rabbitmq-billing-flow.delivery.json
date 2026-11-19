@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "receiptId": "269d0d1d-374d-455a-804e-1c24a3e4cb7b",
+  "receiptId": "63e9f39b-5ef1-4e36-9cfe-480c61d64d17",
   "status": "current",
   "command": "deliver",
   "type": "workflow",
   "input": "D:\\workspace\\项目工程管理\\.archify\\workflow-billing-20261119-192500\\candidate.json",
   "output": "D:\\workspace\\项目工程管理\\projects\\OneGate-Manual\\flows\\redis-rabbitmq-billing-flow.html",
   "specification": {
-    "sha256": "daefd584b96618cecbadb1649c6779b0732fd513a677356876560c8401dae814",
-    "bytes": 5586
+    "sha256": "475393e11c55f6951fa5db964f597e13efd1d4bee208675026e5e68064d4b25e",
+    "bytes": 5528
   },
   "artifact": {
-    "sha256": "e8629d5739fff4e513a48058ce09d33a44c9ed63e16bfa7af9b1aeaae15a6ed9",
-    "bytes": 851364
+    "sha256": "21738e6e327d8cb052013d9875bd83f5895c21b07548b56b80cf3990d083596b",
+    "bytes": 851124
   }
 }

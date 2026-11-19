@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "receiptId": "2a81b3cf-691b-47a7-bda6-a750be47a62f",
+  "receiptId": "9f225b58-6127-4f21-bfc7-f0cdf1029132",
   "status": "current",
   "command": "deliver",
   "type": "architecture",
   "input": "D:\\workspace\\项目工程管理\\.archify\\architecture-onegate-20261119-171800\\candidate.json",
   "output": "D:\\workspace\\项目工程管理\\projects\\OneGate-Manual\\architecture\\html\\onegate-architecture.html",
   "specification": {
-    "sha256": "72cce79f9511750e415cc2b40024cf6ed3a34f5ed57334094e0b60fc28a83fbb",
-    "bytes": 4227
+    "sha256": "27a3bd22304288db456ac54571ee011c573b76ca952e7b09edd2ba8329aadfbb",
+    "bytes": 4127
   },
   "artifact": {
-    "sha256": "19bad00492839cd3510c011cbb8fd8d33110798442e70830e39225692becf8c3",
-    "bytes": 843792
+    "sha256": "dbd582b1f1bd6f653eb1c016ebbcfb458b3b4f42a394008cdb522f54508efad2",
+    "bytes": 843642
   }
 }

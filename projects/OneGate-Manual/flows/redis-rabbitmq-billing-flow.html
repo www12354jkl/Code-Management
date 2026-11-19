@@ -5203,7 +5203,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / 图版 04">
-      <svg viewBox="0 0 1137 652" data-layout-contract="readable-v2" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="">
+      <svg viewBox="0 0 1179 652" data-layout-contract="readable-v2" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="">
         <title id="archify-diagram-title">OneGate Redis 与 RabbitMQ 计费及死信回滚流程</title>
         <desc id="archify-diagram-description">由 Archify 生成的工作流图。</desc>
         <!-- Definitions -->
@@ -5250,43 +5250,43 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Swimlanes -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1081" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1123" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="74" class="t-muted" font-size="10" font-weight="600">01 / 计费服务 (RPC)</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="1081" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="1123" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="198" class="t-muted" font-size="10" font-weight="600">02 / Redis Lua 状态机</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="1081" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="1123" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="322" class="t-muted" font-size="10" font-weight="600">03 / RabbitMQ 结算链路</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="424" width="1081" height="104" rx="10" class="c-lane" stroke-width="1"/>
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="exception-lane" data-composition-frame-id="lane-3-exception" x="46" y="430" width="1069" height="92" rx="8" class="c-security-group" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="424" width="1123" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="exception-lane" data-composition-frame-id="lane-3-exception" x="46" y="430" width="1111" height="92" rx="8" class="c-security-group" stroke-width="1"/>
         <text x="54" y="446" class="t-security" font-size="10" font-weight="600">EX / 限流拦截与 DLX 死信回滚</text>
 
         <!-- Phase headers -->
         <path d="M 74 35 H 442" class="a-default phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
         <rect x="202.4" y="27" width="111.2" height="16" rx="8" class="c-mask phase-chip"/>
         <text x="258" y="38.5" class="t-muted" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">1. 预热与原子预冻结</text>
-        <path d="M 577.2 35 H 847.6" class="a-emphasis phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <rect x="644.8000000000001" y="27" width="135.2" height="16" rx="8" class="c-mask phase-chip"/>
-        <text x="712.4000000000001" y="38.5" class="t-backend" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">2. 正常结算 / 超时转死信</text>
-        <path d="M 1000.4000000000001 35 H 1104.4" class="a-dashed phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <rect x="998.4000000000001" y="27" width="108" height="16" rx="8" class="c-mask phase-chip"/>
-        <text x="1052.4" y="38.5" class="t-messagebus" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">3. 持久化落库 (待补)</text>
+        <path d="M 579.2 35 H 899.6" class="a-emphasis phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <rect x="671.8000000000001" y="27" width="135.2" height="16" rx="8" class="c-mask phase-chip"/>
+        <text x="739.4000000000001" y="38.5" class="t-backend" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">2. 正常结算 / 超时转死信</text>
+        <path d="M 1042.8 35 H 1118.8" class="a-default phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <rect x="1040.8" y="27" width="80" height="16" rx="8" class="c-mask phase-chip"/>
+        <text x="1080.8" y="38.5" class="t-muted" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">3. 持久化落库</text>
 
         <!-- Workflow groups -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="group" data-composition-frame-id="group-0" x="328" y="462" width="545.6" height="62" rx="9" class="c-security-group" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="group" data-composition-frame-id="group-0" x="328" y="462" width="597.6" height="62" rx="9" class="c-security-group" stroke-width="1"/>
         <text x="338" y="460" class="t-security" font-size="7" font-weight="600">5min TTL 延迟死信与回滚保护</text>
 
         <!-- Edge paths -->
         <path data-edge-from="prefreeze_lua" data-edge-to="delay_send" data-edge-label="返回 1" data-edge-key="0" data-edge-id="e_freeze_ok" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="232,217;232,119;340,119" d="M 232 217 L 232 127 Q 232 119 240 119 L 340 119" class="a-emphasis" data-animate="edge" style="--step:1" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <path data-edge-from="prefreeze_lua" data-edge-to="freeze_reject" data-edge-label="0 / -1 / -2" data-edge-key="1" data-edge-id="e_freeze_reject" data-composition-routing="workflow-v2-auto" data-edge-role="error" data-composition-points="232,269;232,465" d="M 232 269 L 232 465" class="a-security" data-animate="edge" style="--step:7" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
-        <path data-edge-from="rollback_lua" data-edge-to="mysql_rollback" data-edge-label="RollbackConsumer" data-edge-key="2" data-edge-id="e_rollback_db" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="869.6,491;964.4000000000001,491" d="M 869.6 491 L 964.4000000000001 491" class="a-dashed" data-animate="edge" style="--step:8" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="dlx_rollback_q" data-edge-to="rollback_lua" data-edge-label="rollbackQuota" data-edge-key="3" data-edge-id="e_rollback_lua" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="669.2,491;749.6,491" d="M 669.2 491 L 749.6 491" class="a-security" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
+        <path data-edge-from="rollback_lua" data-edge-to="mysql_rollback" data-edge-label="uk_req_id 落库" data-edge-key="2" data-edge-id="e_rollback_db" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="921.6,491;1006.8,491" d="M 921.6 491 L 1006.8 491" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="dlx_rollback_q" data-edge-to="rollback_lua" data-edge-label="TimeoutRollbackConsumer" data-edge-key="3" data-edge-id="e_rollback_lua" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="673.2,491;801.6,491" d="M 673.2 491 L 801.6 491" class="a-security" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
         <path data-edge-from="delay_send" data-edge-to="delay_queue" data-edge-label="TimeoutCheck" data-edge-key="4" data-edge-id="e_send_delay" data-composition-routing="workflow-v2-auto" data-edge-role="async" data-composition-points="404,145;404,290;316,290;316,491;332,491" d="M 404 145 L 404 282 Q 404 290 396 290 L 324 290 Q 316 290 316 298 L 316 483 Q 316 491 324 491 L 332 491" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="delay_send" data-edge-to="settle_queue" data-edge-label="SettleMessage (待建)" data-edge-key="5" data-edge-id="e_send_settle" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="428,145;428,367;541.2,367" d="M 428 145 L 428 359 Q 428 367 436 367 L 541.2 367" class="a-dashed" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="settle_lua" data-edge-to="mysql_settle" data-edge-label="SettleConsumer" data-edge-key="6" data-edge-id="e_settle_db" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="809.6,269;809.6,367;970.4000000000001,367" d="M 809.6 269 L 809.6 359 Q 809.6 367 817.6 367 L 970.4000000000001 367" class="a-dashed" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="settle_queue" data-edge-to="settle_lua" data-edge-label="settleQuota" data-edge-key="7" data-edge-id="e_settle_lua" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="689.2,367;785.6,367;785.6,269" d="M 689.2 367 L 777.6 367 Q 785.6 367 785.6 359 L 785.6 269" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="delay_send" data-edge-to="settle_queue" data-edge-label="SettleMessage (网关待建)" data-edge-key="5" data-edge-id="e_send_settle" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="428,145;428,367;565.2,367" d="M 428 145 L 428 359 Q 428 367 436 367 L 565.2 367" class="a-dashed" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="settle_lua" data-edge-to="mysql_settle" data-edge-label="事务 + 补偿" data-edge-key="6" data-edge-id="e_settle_db" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="861.6,269;861.6,367;1012.8,367" d="M 861.6 269 L 861.6 359 Q 861.6 367 869.6 367 L 1012.8 367" class="a-emphasis" data-animate="edge" style="--step:4" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="settle_queue" data-edge-to="settle_lua" data-edge-label="QuotaSettleConsumer" data-edge-key="7" data-edge-id="e_settle_lua" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="669.2,367;837.6,367;837.6,269" d="M 669.2 367 L 829.6 367 Q 837.6 367 837.6 359 L 837.6 269" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <path data-edge-from="delay_queue" data-edge-to="dlx_rollback_q" data-edge-label="TTL 300s → DLX" data-edge-key="8" data-edge-id="e_ttl_dlx" data-composition-routing="workflow-v2-auto" data-edge-role="async" data-composition-points="476,491;561.2,491" d="M 476 491 L 561.2 491" class="a-security" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
         <path data-edge-from="warmup" data-edge-to="prefreeze_lua" data-edge-label="setIfAbsent" data-edge-key="9" data-edge-id="e_warmup_freeze" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="112,145;112,166;208,166;208,217" d="M 112 145 L 112 158 Q 112 166 120 166 L 200 166 Q 208 166 208 174 L 208 217" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
 
@@ -5315,52 +5315,52 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <g id="node-prefreeze_lua" data-node-id="prefreeze_lua" data-node-label="pre_freeze.lua" tabindex="0" role="button" aria-label="聚焦pre_freeze.lua，幂等 / RPM / 预扣配额, Redis Lua 状态机 › 1. 预热与原子预冻结" aria-pressed="false" data-node-kind="database" data-node-sublabel="幂等 / RPM / 预扣配额" data-node-context="Redis Lua 状态机 › 1. 预热与原子预冻结">
           <title>pre_freeze.lua · 幂等 / RPM / 预扣配额 · Redis Lua 状态机 › 1. 预热与原子预冻结</title>
-          <rect x="180" y="217" width="104" height="52" rx="8" class="c-mask"/>
-          <rect x="180" y="217" width="104" height="52" rx="8" class="c-database" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(186 223) scale(0.6875)">
+          <rect x="178" y="217" width="108" height="52" rx="8" class="c-mask"/>
+          <rect x="178" y="217" width="108" height="52" rx="8" class="c-database" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(184 223) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="232" y="249.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">pre_freeze.lua</text>
-          <text data-detail="context" x="232" y="263.7" class="t-muted" font-size="7.6" text-anchor="middle">幂等 / RPM / 预扣配额</text>
+          <text data-detail="context" x="232" y="264" class="t-muted" font-size="7.9" text-anchor="middle">幂等 / RPM / 预扣配额</text>
         </g>
 
         <g id="node-settle_lua" data-node-id="settle_lua" data-node-label="settle_quota.lua" tabindex="0" role="button" aria-label="聚焦settle_quota.lua，多退少补 → SETTLED, Redis Lua 状态机 › 2. 正常结算 / 超时转死信" aria-pressed="false" data-node-kind="database" data-node-sublabel="多退少补 → SETTLED" data-node-context="Redis Lua 状态机 › 2. 正常结算 / 超时转死信">
           <title>settle_quota.lua · 多退少补 → SETTLED · Redis Lua 状态机 › 2. 正常结算 / 超时转死信</title>
-          <rect x="757.6" y="217" width="104" height="52" rx="8" class="c-mask"/>
-          <rect x="757.6" y="217" width="104" height="52" rx="8" class="c-database" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(763.6 223) scale(0.6875)">
+          <rect x="809.6" y="217" width="104" height="52" rx="8" class="c-mask"/>
+          <rect x="809.6" y="217" width="104" height="52" rx="8" class="c-database" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(815.6 223) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="809.6" y="248" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">settle_quota.lua</text>
-          <text data-detail="context" x="809.6" y="262.6" class="t-muted" font-size="8" text-anchor="middle">多退少补 → SETTLED</text>
+          <text data-node-label="" data-detail-anchor="" x="861.6" y="248" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">settle_quota.lua</text>
+          <text data-detail="context" x="861.6" y="262.6" class="t-muted" font-size="8" text-anchor="middle">多退少补 → SETTLED</text>
         </g>
 
-        <g id="node-settle_queue" data-node-id="settle_queue" data-node-label="结算队列" tabindex="0" role="button" aria-label="聚焦结算队列，billing.settle.queue (待消费), RabbitMQ 结算链路 › 2. 正常结算 / 超时转死信" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="billing.settle.queue (待消费)" data-node-context="RabbitMQ 结算链路 › 2. 正常结算 / 超时转死信">
-          <title>结算队列 · billing.settle.queue (待消费) · RabbitMQ 结算链路 › 2. 正常结算 / 超时转死信</title>
-          <rect x="541.2" y="341" width="148" height="52" rx="8" class="c-mask"/>
-          <rect x="541.2" y="341" width="148" height="52" rx="8" class="c-messagebus" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(547.2 347) scale(0.6875)">
+        <g id="node-settle_queue" data-node-id="settle_queue" data-node-label="结算队列" tabindex="0" role="button" aria-label="聚焦结算队列，billing.settle.queue, RabbitMQ 结算链路 › 2. 正常结算 / 超时转死信" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="billing.settle.queue" data-node-context="RabbitMQ 结算链路 › 2. 正常结算 / 超时转死信">
+          <title>结算队列 · billing.settle.queue · RabbitMQ 结算链路 › 2. 正常结算 / 超时转死信</title>
+          <rect x="565.2" y="341" width="104" height="52" rx="8" class="c-mask"/>
+          <rect x="565.2" y="341" width="104" height="52" rx="8" class="c-messagebus" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(571.2 347) scale(0.6875)">
             <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
             <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
             <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
             <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="615.2" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">结算队列</text>
-          <text data-detail="context" x="615.2" y="379" class="t-muted" font-size="8" text-anchor="middle">billing.settle.queue (待消费)</text>
+          <text data-node-label="" data-detail-anchor="" x="617.2" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">结算队列</text>
+          <text data-detail="context" x="617.2" y="379" class="t-muted" font-size="8" text-anchor="middle">billing.settle.queue</text>
         </g>
 
-        <g id="node-mysql_settle" data-node-id="mysql_settle" data-node-label="结算落库 (待补)" tabindex="0" role="button" aria-label="聚焦结算落库 (待补)，ai_token_ledger + 账户实耗, RabbitMQ 结算链路 › 3. 持久化落库 (待补)" aria-pressed="false" data-node-kind="database" data-node-sublabel="ai_token_ledger + 账户实耗" data-node-context="RabbitMQ 结算链路 › 3. 持久化落库 (待补)">
-          <title>结算落库 (待补) · ai_token_ledger + 账户实耗 · RabbitMQ 结算链路 › 3. 持久化落库 (待补)</title>
-          <rect x="970.4000000000001" y="341" width="136" height="52" rx="8" class="c-mask"/>
-          <rect x="970.4000000000001" y="341" width="136" height="52" rx="8" class="c-database" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(976.4000000000001 347) scale(0.6875)">
+        <g id="node-mysql_settle" data-node-id="mysql_settle" data-node-label="结算事务落库" tabindex="0" role="button" aria-label="聚焦结算事务落库，ai_token_ledger + 账户扣减, RabbitMQ 结算链路 › 3. 持久化落库" aria-pressed="false" data-node-kind="database" data-node-sublabel="ai_token_ledger + 账户扣减" data-node-context="RabbitMQ 结算链路 › 3. 持久化落库">
+          <title>结算事务落库 · ai_token_ledger + 账户扣减 · RabbitMQ 结算链路 › 3. 持久化落库</title>
+          <rect x="1012.8" y="341" width="136" height="52" rx="8" class="c-mask"/>
+          <rect x="1012.8" y="341" width="136" height="52" rx="8" class="c-database" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1018.8 347) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1038.9" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">结算落库 (待补)</text>
-          <text data-detail="context" x="1038.4" y="379" class="t-muted" font-size="8" text-anchor="middle">ai_token_ledger + 账户实耗</text>
+          <text data-node-label="" data-detail-anchor="" x="1080.8" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">结算事务落库</text>
+          <text data-detail="context" x="1080.8" y="379" class="t-muted" font-size="8" text-anchor="middle">ai_token_ledger + 账户扣减</text>
         </g>
 
         <g id="node-freeze_reject" data-node-id="freeze_reject" data-node-label="预冻结拦截" tabindex="0" role="button" aria-label="聚焦预冻结拦截，0 幂等 / -1 限流 / -2 欠费, 限流拦截与 DLX 死信回滚 › 1. 预热与原子预冻结" aria-pressed="false" data-node-kind="security" data-node-sublabel="0 幂等 / -1 限流 / -2 欠费" data-node-context="限流拦截与 DLX 死信回滚 › 1. 预热与原子预冻结">
@@ -5391,8 +5391,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <g id="node-dlx_rollback_q" data-node-id="dlx_rollback_q" data-node-label="死信回滚队列" tabindex="0" role="button" aria-label="聚焦死信回滚队列，timeout.rollback.queue, 限流拦截与 DLX 死信回滚 › 5min TTL 延迟死信与回滚保护 › 2. 正常结算 / 超时转死信" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="timeout.rollback.queue" data-node-context="限流拦截与 DLX 死信回滚 › 5min TTL 延迟死信与回滚保护 › 2. 正常结算 / 超时转死信">
           <title>死信回滚队列 · timeout.rollback.queue · 限流拦截与 DLX 死信回滚 › 5min TTL 延迟死信与回滚保护 › 2. 正常结算 / 超时转死信</title>
-          <rect x="561.2" y="465" width="108" height="52" rx="8" class="c-mask"/>
-          <rect x="561.2" y="465" width="108" height="52" rx="8" class="c-messagebus" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <rect x="561.2" y="465" width="112" height="52" rx="8" class="c-mask"/>
+          <rect x="561.2" y="465" width="112" height="52" rx="8" class="c-messagebus" data-animate="node" style="--step:12" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(567.2 471) scale(0.6875)">
             <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
             <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
@@ -5400,31 +5400,31 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="619.8000000000001" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">死信回滚队列</text>
-          <text data-detail="context" x="615.2" y="503" class="t-muted" font-size="7.5" text-anchor="middle">timeout.rollback.queue</text>
+          <text data-detail="context" x="617.2" y="503" class="t-muted" font-size="7.8" text-anchor="middle">timeout.rollback.queue</text>
         </g>
 
         <g id="node-rollback_lua" data-node-id="rollback_lua" data-node-label="rollback_quota.lua" tabindex="0" role="button" aria-label="聚焦rollback_quota.lua，全额退回 → ROLLED_BACK, 限流拦截与 DLX 死信回滚 › 5min TTL 延迟死信与回滚保护 › 2. 正常结算 / 超时转死信" aria-pressed="false" data-node-kind="database" data-node-sublabel="全额退回 → ROLLED_BACK" data-node-context="限流拦截与 DLX 死信回滚 › 5min TTL 延迟死信与回滚保护 › 2. 正常结算 / 超时转死信">
           <title>rollback_quota.lua · 全额退回 → ROLLED_BACK · 限流拦截与 DLX 死信回滚 › 5min TTL 延迟死信与回滚保护 › 2. 正常结算 / 超时转死信</title>
-          <rect x="749.6" y="465" width="120" height="52" rx="8" class="c-mask"/>
-          <rect x="749.6" y="465" width="120" height="52" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(755.6 471) scale(0.6875)">
+          <rect x="801.6" y="465" width="120" height="52" rx="8" class="c-mask"/>
+          <rect x="801.6" y="465" width="120" height="52" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(807.6 471) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="809.6" y="496.4" class="t-primary" font-size="10.3" font-weight="600" text-anchor="middle">rollback_quota.lua</text>
-          <text data-detail="context" x="809.6" y="511.1" class="t-muted" font-size="8" text-anchor="middle">全额退回 → ROLLED_BACK</text>
+          <text data-node-label="" data-detail-anchor="" x="861.6" y="496.4" class="t-primary" font-size="10.3" font-weight="600" text-anchor="middle">rollback_quota.lua</text>
+          <text data-detail="context" x="861.6" y="511.1" class="t-muted" font-size="8" text-anchor="middle">全额退回 → ROLLED_BACK</text>
         </g>
 
-        <g id="node-mysql_rollback" data-node-id="mysql_rollback" data-node-label="回滚落库 (待补)" tabindex="0" role="button" aria-label="聚焦回滚落库 (待补)，ai_token_ledger (ROLLED_BACK), 限流拦截与 DLX 死信回滚 › 3. 持久化落库 (待补)" aria-pressed="false" data-node-kind="database" data-node-sublabel="ai_token_ledger (ROLLED_BACK)" data-node-context="限流拦截与 DLX 死信回滚 › 3. 持久化落库 (待补)">
-          <title>回滚落库 (待补) · ai_token_ledger (ROLLED_BACK) · 限流拦截与 DLX 死信回滚 › 3. 持久化落库 (待补)</title>
-          <rect x="964.4000000000001" y="465" width="148" height="52" rx="8" class="c-mask"/>
-          <rect x="964.4000000000001" y="465" width="148" height="52" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(970.4000000000001 471) scale(0.6875)">
+        <g id="node-mysql_rollback" data-node-id="mysql_rollback" data-node-label="回滚落库" tabindex="0" role="button" aria-label="聚焦回滚落库，ai_token_ledger (ROLLED_BACK), 限流拦截与 DLX 死信回滚 › 3. 持久化落库" aria-pressed="false" data-node-kind="database" data-node-sublabel="ai_token_ledger (ROLLED_BACK)" data-node-context="限流拦截与 DLX 死信回滚 › 3. 持久化落库">
+          <title>回滚落库 · ai_token_ledger (ROLLED_BACK) · 限流拦截与 DLX 死信回滚 › 3. 持久化落库</title>
+          <rect x="1006.8" y="465" width="148" height="52" rx="8" class="c-mask"/>
+          <rect x="1006.8" y="465" width="148" height="52" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1012.8 471) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1038.4" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">回滚落库 (待补)</text>
-          <text data-detail="context" x="1038.4" y="503" class="t-muted" font-size="8" text-anchor="middle">ai_token_ledger (ROLLED_BACK)</text>
+          <text data-node-label="" data-detail-anchor="" x="1080.8" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">回滚落库</text>
+          <text data-detail="context" x="1080.8" y="503" class="t-muted" font-size="8" text-anchor="middle">ai_token_ledger (ROLLED_BACK)</text>
         </g>
 
         <!-- Edge labels -->
@@ -5436,29 +5436,29 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <rect x="200.6" y="357" width="62.8" height="14" rx="3" class="c-mask"/>
           <text x="232" y="367" class="t-edge-security" font-size="8" text-anchor="middle">0 / -1 / -2</text>
         </g>
-        <g data-detail="context" data-edge-from="rollback_lua" data-edge-to="mysql_rollback" data-edge-label="RollbackConsumer" data-edge-key="2" data-edge-id="e_rollback_db">
-          <rect x="873.6" y="471" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="917" y="481" class="t-edge-dashed" font-size="8" text-anchor="middle">RollbackConsumer</text>
+        <g data-detail="context" data-edge-from="rollback_lua" data-edge-to="mysql_rollback" data-edge-label="uk_req_id 落库" data-edge-key="2" data-edge-id="e_rollback_db">
+          <rect x="925.6" y="471" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="964.2" y="481" class="t-muted" font-size="8" text-anchor="middle">uk_req_id 落库</text>
         </g>
-        <g data-detail="context" data-edge-from="dlx_rollback_q" data-edge-to="rollback_lua" data-edge-label="rollbackQuota" data-edge-key="3" data-edge-id="e_rollback_lua">
-          <rect x="673.2" y="471" width="72.4" height="14" rx="3" class="c-mask"/>
-          <text x="709.4000000000001" y="481" class="t-edge-security" font-size="8" text-anchor="middle">rollbackQuota</text>
+        <g data-detail="context" data-edge-from="dlx_rollback_q" data-edge-to="rollback_lua" data-edge-label="TimeoutRollbackConsumer" data-edge-key="3" data-edge-id="e_rollback_lua">
+          <rect x="677.2" y="471" width="120.39999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="737.4000000000001" y="481" class="t-edge-security" font-size="8" text-anchor="middle">TimeoutRollbackConsumer</text>
         </g>
         <g data-detail="context" data-edge-from="delay_send" data-edge-to="delay_queue" data-edge-label="TimeoutCheck" data-edge-key="4" data-edge-id="e_send_delay">
           <rect x="326.2" y="270" width="67.6" height="14" rx="3" class="c-mask"/>
           <text x="360" y="280" class="t-muted" font-size="8" text-anchor="middle">TimeoutCheck</text>
         </g>
-        <g data-detail="context" data-edge-from="delay_send" data-edge-to="settle_queue" data-edge-label="SettleMessage (待建)" data-edge-key="5" data-edge-id="e_send_settle">
-          <rect x="431.6" y="347" width="106" height="14" rx="3" class="c-mask"/>
-          <text x="484.6" y="357" class="t-edge-dashed" font-size="8" text-anchor="middle">SettleMessage (待建)</text>
+        <g data-detail="context" data-edge-from="delay_send" data-edge-to="settle_queue" data-edge-label="SettleMessage (网关待建)" data-edge-key="5" data-edge-id="e_send_settle">
+          <rect x="434" y="347" width="125.19999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="496.6" y="357" class="t-edge-dashed" font-size="8" text-anchor="middle">SettleMessage (网关待建)</text>
         </g>
-        <g data-detail="context" data-edge-from="settle_lua" data-edge-to="mysql_settle" data-edge-label="SettleConsumer" data-edge-key="6" data-edge-id="e_settle_db">
-          <rect x="851.4" y="347" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="890" y="357" class="t-edge-dashed" font-size="8" text-anchor="middle">SettleConsumer</text>
+        <g data-detail="context" data-edge-from="settle_lua" data-edge-to="mysql_settle" data-edge-label="事务 + 补偿" data-edge-key="6" data-edge-id="e_settle_db">
+          <rect x="905.8000000000001" y="347" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="937.2" y="357" class="t-edge-emphasis" font-size="8" text-anchor="middle">事务 + 补偿</text>
         </g>
-        <g data-detail="context" data-edge-from="settle_queue" data-edge-to="settle_lua" data-edge-label="settleQuota" data-edge-key="7" data-edge-id="e_settle_lua">
-          <rect x="706.0000000000001" y="347" width="62.8" height="14" rx="3" class="c-mask"/>
-          <text x="737.4000000000001" y="357" class="t-edge-emphasis" font-size="8" text-anchor="middle">settleQuota</text>
+        <g data-detail="context" data-edge-from="settle_queue" data-edge-to="settle_lua" data-edge-label="QuotaSettleConsumer" data-edge-key="7" data-edge-id="e_settle_lua">
+          <rect x="702.8000000000001" y="347" width="101.2" height="14" rx="3" class="c-mask"/>
+          <text x="753.4000000000001" y="357" class="t-edge-emphasis" font-size="8" text-anchor="middle">QuotaSettleConsumer</text>
         </g>
         <g data-detail="context" data-edge-from="delay_queue" data-edge-to="dlx_rollback_q" data-edge-label="TTL 300s → DLX" data-edge-key="8" data-edge-id="e_ttl_dlx">
           <rect x="480" y="471" width="77.2" height="14" rx="3" class="c-mask"/>
@@ -5669,22 +5669,22 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="card">
         <div class="card-header">
           <div class="card-dot cyan"></div>
-          <h3>Redis 终态幂等保护</h3>
+          <h3>Redis 终态幂等与补偿</h3>
         </div>
         <ul>
-          <li>onegate:req:{req_id} 状态仅允许 FROZEN → SETTLED 或 FROZEN → ROLLED_BACK 单向流转</li>
-          <li>若正常结算已先推进为 SETTLED，5 分钟后死信到达执行 rollback_quota.lua 会返回 0 并空操作忽略</li>
+          <li>onegate:req:{req_id} 仅允许 FROZEN → SETTLED / ROLLED_BACK 单向流转</li>
+          <li>QuotaSettleConsumer 支持 Redis 已 SETTLED 但 DB 回滚后的重试补偿持久化</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div class="card-dot amber"></div>
-          <h3>RabbitMQ 拓扑与缺口</h3>
+          <h3>RabbitMQ 消费与演练</h3>
         </div>
         <ul>
-          <li>RabbitMqConfig 已声明业务交换机、DLX、结算队列、5min 延迟队列与 2s 测试延迟队列</li>
-          <li>当前 SettleConsumer / TimeoutRollbackConsumer 及 MySQL 流水落库闭环尚待实现</li>
+          <li>QuotaSettleConsumer 与 QuotaTimeoutRollbackConsumer 已实现并接入 uk_req_id 防重</li>
+          <li>AdminController (/admin/test/freeze-only) 支持 2 秒测试延迟队列演练，尚缺网关投递端</li>
         </ul>
       </div>
     </div>
