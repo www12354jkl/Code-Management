@@ -36,7 +36,7 @@ remote: https://github.com/www12354jkl/EasyChat
 
 - **统一网关鉴权与长连接动态路由**：`easychat-gateway`（WebFlux `:8080`）统一校验 Bearer JWT、`token:blacklist`、`token:revoke-before` 与一次性 `ws:ticket`，通过 `WsLoadBalancer` 读取 Nacos 实例元数据 `ws-port` 将 `/ws` 升级流量路由至 `easychat-chat` 的 Netty `:8083` 端口。
 - **可水平扩展的多实例 WebSocket 实时推送**：`easychat-chat` 支持 `local`（单机直写 Channel）与 `kafka`（全实例独立消费组广播，本地命中活跃 Channel 后下发）双模式投递，并结合 Redis `ws:online` 心跳续期与 Lua CAS 断开清理维持在线状态一致性。
-- **跨服务拆分、流量治理与消息防重**：`easychat_user` 与 `easychat_chat` 物理分库（各自内置 Flyway 增量迁移脚本 `V1~V6`），通过 Dubbo 3.3 RPC（配 Failfast 降级）协同；同时集成 Sentinel 网关/接口限流、Redis 注解 `@RateLimit` 防刷、`client_msg_id` 唯一索引发信幂等、2 分钟限时撤回与成员维度 `cleared_at` 单边清空记录。
+- **跨服务拆分、流量治理与消息防重**：`easychat_user` 与 `easychat_chat` 物理分库（各自内置 Flyway 增量迁移脚本 `V1~V7`），通过 Dubbo 3.3 RPC（配 Failfast 降级）协同；同时集成 Sentinel 网关/接口限流、Redis 注解 `@RateLimit` 防刷、`client_msg_id` 唯一索引发信幂等、2 分钟限时撤回与成员维度 `cleared_at` 单边清空记录。
 - **Web 与 Electron 桌面双端体验**：前端一套 Vue 3 + Tailwind CSS + Pinia 代码同步支持浏览器 Web 与 Electron 35 桌面端（无边框窗口、登录/主窗体尺寸模式自动切换、`contextMenu`、IndexedDB 会话本地缓存与 401 单飞刷新）。
 
 ## 技术栈
@@ -70,3 +70,5 @@ remote: https://github.com/www12354jkl/EasyChat
 - 缓存、队列与流控：[[architecture/Redis与Kafka设计]]
 - 流程图：[[flows/easychat-ws-kafka-push-flow.html|WebSocket 票据握手与 Kafka 多节点推送时序图]]
 - 部署：[[deploy/部署说明]]
+- 决策记录：[[decisions/001-内部通信从OpenFeign迁移至Dubbo接口级注册|001 Dubbo 接口级注册]] ｜ [[decisions/002-多实例WebSocket广播引入Kafka独立消费组与Redis-CAS在线态|002 Kafka WS 广播与 CAS]] ｜ [[decisions/003-WebSocket握手改用30秒一次性Ticket与统一鉴权契约|003 WS Ticket 握手契约]] ｜ [[decisions/004-双Token黑名单迁移非阻塞网关校验并采用Redis故障Fail-Closed策略|004 双 Token 黑名单与 Fail-Closed]]
+- 开发日志：[[devlog/2026-11-20|2026-11-20 开发日志]]

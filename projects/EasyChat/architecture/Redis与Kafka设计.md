@@ -55,7 +55,7 @@ end
 
 ## 三、Sentinel 网关与微服务限流基线
 
-三个可执行模块均同时配置了本地 JSON 规则（兜底）与 Nacos `SENTINEL_GROUP` 动态数据源，限流触发时统一返回 HTTP `200` / `429` JSON `{"code":429,"message":"请求过于频繁，请稍后再试"}`：
+三个可执行模块均同时配置了本地 JSON 规则（兜底）与 Nacos `SENTINEL_GROUP` 动态数据源，限流触发时统一返回 JSON `{"code":429,"message":"请求过于频繁，请稍后再试"}`（其中 Gateway 在 `application.yml` 返回 HTTP `429`，`easychat-user` / `easychat-chat` 经 `SentinelWebMvcConfig` 返回 HTTP `200` + JSON `code:429`）：
 
 | 模块 | 配置文件 / DataId | 已配置资源与阈值 |
 |---|---|---|
