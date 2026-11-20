@@ -1,7 +1,8 @@
 ---
 type: project
-status: 进行中
+status: 已完成
 created: 2026-11-19
+updated: 2026-11-20
 tech:
   - Java 21
   - Spring Boot 3.3.5
@@ -28,7 +29,7 @@ repo: D:\workspace\OneGate-Manual
 
 - **高并发配额防超卖**：通过 Redis Lua 原子脚本实现单次请求幂等校验、分钟级 RPM 限流与配额预冻结。
 - **准确的多退少补结算与超时兜底**：请求完成后按实际 Token 消耗退还或补扣差额；调用异常或超时未结算时，通过 RabbitMQ 5 分钟 TTL 延迟队列与 DLX 死信队列触发全额回滚。
-- **多租户鉴权与多模型渠道路由**：为网关层提供租户 API Key 校验、欠费短路保护及多渠道加权负载均衡配置能力（网关模块待建设）。
+- **多租户鉴权与多模型渠道路由**：提供租户 API Key 鉴权、本地 Caffeine 5 秒欠费短路保护、滑动窗口熔断器及多渠道 Failover 容灾切换。
 
 ## 技术栈
 
@@ -40,11 +41,16 @@ repo: D:\workspace\OneGate-Manual
 
 ## 快速运行
 
-> [!NOTE] 当前仓库状态
-> 目前已完成基础设施编排、`onegate-common` 契约层，以及 `onegate-billing-service` 的核心 RPC、Lua 脚本、RabbitMQ 双消费者（`QuotaSettleConsumer` / `QuotaTimeoutRollbackConsumer`）与 `/admin` 对账控制台；`onegate-billing-service` 尚缺 Spring Boot 启动类，`onegate-gateway` 模块尚未创建，暂未形成完整端到端网关链路。
+> [!TIP] 项目状态：已完成
+> `onegate-common`、`onegate-billing-service` 与 `onegate-gateway-service` 三大模块及内置监控控制台均已开发完成，并已通过本地端到端联调与黄金对账验证（误差 0 Token）。
 
 1. 在源码目录 `D:\workspace\OneGate-Manual` 启动中间件（MySQL、Redis、RabbitMQ、Nacos），详见 [[deploy/部署说明]]。
-2. 在 `D:\workspace\OneGate-Manual\backend` 编译现有模块（`onegate-common`、`onegate-billing-service`）。
+2. 先启动 `onegate-billing-service` 主类 `OneGateBillingApplication`（HTTP `:8081`，Dubbo Triple `:20880`），再启动 `onegate-gateway-service` 主类 `OneGateGatewayApplication`（HTTP `:8080`）。
+3. 浏览器打开网关自带的实时监控与混沌实验控制台：`http://127.0.0.1:8080/`。
+
+## 运行实测截图
+
+![[assets/onegate-console-live.png]]
 
 ## 相关文档
 
@@ -52,5 +58,5 @@ repo: D:\workspace\OneGate-Manual
 - 架构：[[architecture/架构说明]]
 - 中间件：[[architecture/Redis与RabbitMQ设计]]
 - 数据库：[[architecture/数据库设计]]（[[architecture/html/onegate-erd.html|E-R 图]]）
-- 流程图：[[flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费及死信回滚流程]] ｜ [[flows/onegate-billing-sequence.drawio|配额计费与死信回滚时序图 (.drawio)]]
+- 流程图：[[flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费及死信回滚流程]] ｜ [[flows/onegate-billing-sequence.drawio|全链路计费与熔断回滚时序图 (.drawio)]] ｜ [[flows/onegate-billing-sequence.html|时序图交互式 HTML]]
 - 部署：[[deploy/部署说明]]

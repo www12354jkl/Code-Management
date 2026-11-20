@@ -1,11 +1,11 @@
 ---
 type: architecture
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 
 # Redis 与 RabbitMQ 设计
 
-关联文档：[[../README|项目 README]] ｜ [[架构说明]] ｜ [[数据库设计]] ｜ [[../flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费流程图]] ｜ [[../flows/onegate-billing-sequence.drawio|计费与死信回滚时序图 (.drawio)]]
+关联文档：[[../README|项目 README]] ｜ [[架构说明]] ｜ [[数据库设计]] ｜ [[../flows/redis-rabbitmq-billing-flow.html|Redis 与 RabbitMQ 计费流程图]] ｜ [[../flows/onegate-billing-sequence.drawio|计费与熔断回滚时序图 (.drawio)]] ｜ [[../flows/onegate-billing-sequence.html|时序图交互式 HTML]]
 
 ## 一、Redis 设计
 
@@ -74,10 +74,9 @@ stateDiagram-v2
 
 1. **`TimeoutCheckMessage`**（`QuotaBillingRpcServiceImpl.preFreezeQuota` 成功后发送至延迟队列）：
    - `reqId`、`tenantId`、`freezeTokens`、`timestamp`
-2. **`SettleMessage`**（网关在模型调用完成后投递至结算队列，网关侧发送逻辑待建）：
+2. **`SettleMessage`**（网关 `ChatCompletionController.sendAsyncSettleMessage` 在模型调用完成后投递至结算队列）：
    - `reqId`、`tenantId`、`frozenTokens`、`actualTokens`、`modelName`、`channelCode`、`timestamp`
 
-### 2.4 当前实现进度与缺口
+### 2.4 当前实现进度
 
-- 已完成：`RabbitMqConfig` 拓扑声明、`QuotaBillingRpcServiceImpl` 预冻结后延迟消息投递、`QuotaSettleConsumer` 异步结算与补偿落库、`QuotaTimeoutRollbackConsumer` 死信超时回滚落库，以及 `AdminController`（`/admin/test/freeze-only`）秒级死信演练入口。
-- 待补全：网关模块 `onegate-gateway` 向结算队列投递 `SettleMessage` 的上游调用链（以及 `onegate-billing-service` 启动类）。
+- 已完成全链路：`RabbitMqConfig` 拓扑声明、`QuotaBillingRpcServiceImpl` 预冻结后延迟消息投递、`onegate-gateway-service`（`ChatCompletionController`）成功结算投递 `SettleMessage` 与全失败即时投递 `TIMEOUT_ROLLBACK_ROUTING_KEY`、`QuotaSettleConsumer` 异步结算与补偿落库、`QuotaTimeoutRollbackConsumer` 死信超时回滚落库，以及 `AdminController`（`/admin/test/freeze-only`）秒级死信演练入口。
