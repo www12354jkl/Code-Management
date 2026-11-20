@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "erd",
+  "quality": "standard",
+  "specification": {
+    "path": "D:\\workspace\\项目工程管理\\.archify\\erd-easychat-20261120-164200\\candidate.json",
+    "sha256": "77c58fa07b954b6ef21be259d2967bfe959f2e9853369e9a87d66b34ed27d403",
+    "bytes": 11832
+  },
+  "artifact": {
+    "path": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-erd.html",
+    "sha256": "5047cab85cdfeac0361bead2c1af72408cd97f968c55e4e50ad439cb194f9b1d",
+    "bytes": 892248
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-erd.finalize.json",
+    "summaryReceipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-erd.finalize-summary.json",
+    "browserCheckReceipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-erd.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-20T08:43:02.767Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 4375,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

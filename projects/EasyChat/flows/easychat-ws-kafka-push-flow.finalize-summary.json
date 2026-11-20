@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "sequence",
+  "quality": "showcase",
+  "specification": {
+    "path": "D:\\workspace\\项目工程管理\\.archify\\sequence-easychat-ws-push-20261120-164200\\candidate.json",
+    "sha256": "c37c14fc0a8f4244fee438ca6fcdc6047ac10a706137f83a86d8e5b437af75de",
+    "bytes": 8702
+  },
+  "artifact": {
+    "path": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\flows\\easychat-ws-kafka-push-flow.html",
+    "sha256": "994d93836e9eb9cb1e85d1e04a1b574f97e4a7bb7ccbbb19913d31273dad1111",
+    "bytes": 852803
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\flows\\easychat-ws-kafka-push-flow.finalize.json",
+    "summaryReceipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\flows\\easychat-ws-kafka-push-flow.finalize-summary.json",
+    "browserCheckReceipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\flows\\easychat-ws-kafka-push-flow.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-20T08:43:02.767Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 3911,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

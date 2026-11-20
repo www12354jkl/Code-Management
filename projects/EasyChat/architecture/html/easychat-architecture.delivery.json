@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "b1dd035c-6bfc-432d-b9f7-601dc23a3fb0",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "D:\\workspace\\项目工程管理\\.archify\\architecture-easychat-20261120-164200\\candidate.json",
+  "output": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-architecture.html",
+  "specification": {
+    "sha256": "208621c8d10abcfe182f9ec672da293e9dad32679877e6193d98b4b2d3d48846",
+    "bytes": 10172
+  },
+  "artifact": {
+    "sha256": "3116560b668c3bbfcd65047fd87211a62eb4d45c1ef6204fe814c4d4318e03af",
+    "bytes": 862230
+  }
+}

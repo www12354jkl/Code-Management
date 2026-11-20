@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "8cb76e96-bdbb-4ac1-b606-bef6493e2f1c",
+  "status": "current",
+  "command": "deliver",
+  "type": "erd",
+  "input": "D:\\workspace\\项目工程管理\\.archify\\erd-easychat-20261120-164200\\candidate.json",
+  "output": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-erd.html",
+  "specification": {
+    "sha256": "77c58fa07b954b6ef21be259d2967bfe959f2e9853369e9a87d66b34ed27d403",
+    "bytes": 11832
+  },
+  "artifact": {
+    "sha256": "5047cab85cdfeac0361bead2c1af72408cd97f968c55e4e50ad439cb194f9b1d",
+    "bytes": 892248
+  }
+}

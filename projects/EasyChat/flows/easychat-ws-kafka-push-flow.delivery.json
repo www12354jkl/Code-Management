@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "54e1cf0b-afba-4d70-b8fb-88b4a8be79ae",
+  "status": "current",
+  "command": "deliver",
+  "type": "sequence",
+  "input": "D:\\workspace\\项目工程管理\\.archify\\sequence-easychat-ws-push-20261120-164200\\candidate.json",
+  "output": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\flows\\easychat-ws-kafka-push-flow.html",
+  "specification": {
+    "sha256": "c37c14fc0a8f4244fee438ca6fcdc6047ac10a706137f83a86d8e5b437af75de",
+    "bytes": 8702
+  },
+  "artifact": {
+    "sha256": "994d93836e9eb9cb1e85d1e04a1b574f97e4a7bb7ccbbb19913d31273dad1111",
+    "bytes": 852803
+  }
+}

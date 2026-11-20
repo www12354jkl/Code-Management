@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "D:\\workspace\\项目工程管理\\.archify\\architecture-easychat-20261120-164200\\candidate.json",
+    "sha256": "208621c8d10abcfe182f9ec672da293e9dad32679877e6193d98b4b2d3d48846",
+    "bytes": 10172
+  },
+  "artifact": {
+    "path": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-architecture.html",
+    "sha256": "3116560b668c3bbfcd65047fd87211a62eb4d45c1ef6204fe814c4d4318e03af",
+    "bytes": 862230
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-architecture.finalize.json",
+    "summaryReceipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-architecture.finalize-summary.json",
+    "browserCheckReceipt": "D:\\workspace\\项目工程管理\\projects\\EasyChat\\architecture\\html\\easychat-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-20T08:43:02.767Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 4337,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}
