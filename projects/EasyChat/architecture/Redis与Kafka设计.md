@@ -1,6 +1,6 @@
 ---
 type: architecture
-updated: 2026-11-20
+updated: 2026-11-22
 ---
 
 # Redis、Kafka 与流控设计
@@ -16,7 +16,7 @@ EasyChat 在网关、安全组件、用户服务与聊天服务间共用 Redis�
 | `token:blacklist:{token}` | String `"1"` | 令牌剩余有效期（ms） | **写入**：`AuthServiceImpl`（`logout` 时拉黑 Access/Refresh Token；轮换刷新时拉黑旧 Refresh Token）<br>**校验**：`GatewayAuthFilter` & `JwtAuthFilter` |
 | `token:revoke-before:{userId}` | String 毫秒时间戳 | `refreshExpiration`（默认 7 天） | **写入**：`TokenBlacklistServiceImpl.revokeUserTokens`（忘记密码、重置密码时触发）<br>**校验**：签发时间 `iat <= revokeBefore` 的历史 Access/Refresh Token 一律作废 |
 | `ws:ticket:{ticket}` | String `{userId}` | `30s` | **写入**：`WsTicketService.issue`（`POST /api/chat/ws-ticket`）<br>**预检与核销**：`GatewayAuthFilter` 校验存在；Netty `AuthWsHandler` 调用 `getAndDelete` 一次性原子消费 |
-| `ws:online:{userId}` | String `{wsInstanceId}` | `5m` | **写入与续期**：Netty 上线写入，收到客户端每 25s 一次 `PING` 刷新过期时间<br>**断开清理**：`WsSessionRegistry` 执行 Lua CAS 脚本（仅当 Redis 值等于本节点 `instanceId` 时删除，避免旧连接断开误删重连新节点会话） |
+| `ws:online:{userId}` | String `{wsInstanceId}` | `5m` | **写入与续期**：Netty 上线写入，收到客户端每 25s 一次 `PING` 执行 `REFRESH_SCRIPT` Lua CAS 续期<br>**断开清理**：`WsSessionRegistry` 执行 `OFFLINE_SCRIPT` Lua CAS 脚本（仅当 Redis 值等于本节点 `instanceId` 时续期/删除，避免旧连接断开误操作重连新节点会话） |
 | `email:code:{email}` | String 6 位数字验证码 | `5m` | `EmailUtil` 发送邮箱验证码时写入，注册 / 找回 / 重置密码校验成功立即删除 |
 | `email:code:limit:{email}` | String `"1"` | `60s` | `AuthServiceImpl` / `UserServiceImpl` 防止 60 秒内重复发送邮件验证码 |
 | `rate:{methodName}:{identifier}` | String 原子计数器 | 注解参数 `seconds`（默认 60s） | `RateLimitAspect`（`ratelimit.enabled=true` 时生效），支持固定 key 或方法首字符串参数限流 |
@@ -42,6 +42,7 @@ end
   - `KafkaWsPushRouter` 将消息/会话通知包装为 `WsPushEvent(toUserId, type, payloadJson, traceId)` 经 `KafkaWsPushPublisher` 发往主题 `easychat-ws-push`（以 `toUserId` 作为 Kafka 消息 Key）。
   - `WsDeliveryConfig` 为每个 `easychat-chat` 实例生成唯一 Bean `wsInstanceId` 与独立消费者组名：`${spring.application.name}-ws-push-${wsInstanceId}`（支持环境变量覆盖）。
   - 因此多台 `easychat-chat` 实例处于**不同 Consumer Group**，均可全量收到 `easychat-ws-push` 事件；各实例内 `WsPushKafkaConsumer` 检查本机 `WsSessionManager.getChannel(toUserId)` 是否存在，仅持有目标长连接的实例向前端写入 `TextWebSocketFrame`，实现无状态横向扩容与 `traceId` 跨线程透传。
+- **在线状态异步广播调度（`WsOnlineStatusBroadcaster`）**：上线/下线触发的 `ONLINE_STATUS` 广播按 `userId` 哈希进入 `16` 路有界单线程条带池（每路队列 `64`），保障同一用户在 Kafka `toUserId` 分区上的上下线顺序一致，队满淘汰最旧任务时显式打印告警日志。
 
 ### 2. WebSocket 推送事件类型
 

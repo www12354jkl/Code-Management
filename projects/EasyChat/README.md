@@ -2,7 +2,7 @@
 type: project
 status: 已完成
 created: 2026-08-22
-updated: 2026-11-20
+updated: 2026-11-22
 tech:
   - Java 21
   - Spring Boot 4.0.7
@@ -70,5 +70,5 @@ remote: https://github.com/www12354jkl/EasyChat
 - 缓存、队列与流控：[[architecture/Redis与Kafka设计]]
 - 流程图：[[flows/easychat-ws-kafka-push-flow.html|WebSocket 票据握手与 Kafka 多节点推送时序图]]
 - 部署：[[deploy/部署说明]]
-- 决策记录：[[decisions/001-内部通信从OpenFeign迁移至Dubbo接口级注册|001 Dubbo 接口级注册]] ｜ [[decisions/002-多实例WebSocket广播引入Kafka独立消费组与Redis-CAS在线态|002 Kafka WS 广播与 CAS]] ｜ [[decisions/003-WebSocket握手改用30秒一次性Ticket与统一鉴权契约|003 WS Ticket 握手契约]] ｜ [[decisions/004-双Token黑名单迁移非阻塞网关校验并采用Redis故障Fail-Closed策略|004 双 Token 黑名单与 Fail-Closed]]
-- 开发日志：[[devlog/2026-11-20|2026-11-20 开发日志]]
+- 决策记录：[[decisions/001-内部通信从OpenFeign迁移至Dubbo接口级注册|001 Dubbo 接口级注册]] ｜ [[decisions/002-多实例WebSocket广播引入Kafka独立消费组与Redis-CAS在线态|002 Kafka WS 广播与 CAS]] ｜ [[decisions/003-WebSocket握手改用30秒一次性Ticket与统一鉴权契约|003 WS Ticket 握手契约]] ｜ [[decisions/004-双Token黑名单迁移非阻塞网关校验并采用Redis故障Fail-Closed策略|004 双 Token 黑名单与 Fail-Closed]] ｜ [[decisions/005-在线状态异步广播采用按userId分片单线程条带池|005 在线状态广播条带池]]
+- 开发日志：[[devlog/2026-11-20|2026-11-20 开发日志]] ｜ [[devlog/2026-11-22|2026-11-22 开发日志]]
